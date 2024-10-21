@@ -35,18 +35,20 @@ function Grades(times)
 {
 	var gradeinput = 0
 	var grade = 0;
+	gradeinput = parseFloat(document.getElementById("txtinput").value)
+	if (gradeinput > 100.00 || gradeinput < 0.00)
+		{
+			alert("Number must be within 0 and 100!")
+			document.getElementById("txtinput").value = ""
+		}
+	else 
+		{
+			
+		}
 	for (let i = 0; i <= parseInt(times); i++)
 		{
-			gradeinput = parseFloat(document.getElementById("txtinput").value)
-			if (gradeinput <= 100.00 && gradeinput >= 0.00)
-				{
-					grade = grade + parseFloat(document.getElementById("txtinput").value)
-				}
-			else 
-			{
-				alert("Number must be within 0 and 100!")
-				document.getElementById("txtinput").value = ""
-			}
+			grade = grade + parseFloat(document.getElementById("txtinput").value)
+
 		}
 	document.getElementById("lbloutput").textContent = "Grade average: " + grade
 }
