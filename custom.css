@@ -1,0 +1,21 @@
+body 
+{
+	background-color: purple;
+	font-size: 20px;
+	color: white;
+}
+
+h1 
+{
+	font-size: 50px;
+	color: white;
+}
+
+button[name= "btnsubmit"]
+{
+	height:30px;
+	width:5%;
+	color:#004080;
+	background-color:black;
+	font-size:100%;
+}
