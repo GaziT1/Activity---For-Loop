@@ -1,5 +1,5 @@
 window.addEventListener("load",addListener);
-var count = "";
+var count = "", grade = 0, gradeinput = 0;
 function addListener()
 {
 		document.getElementById("btnsubmit").addEventListener("click",Check);
@@ -33,22 +33,21 @@ function Howmnygrdes()
 
 function Grades(times)
 {
-	var gradeinput = 0
-	var grade = 0;
-	gradeinput = parseFloat(document.getElementById("txtinput").value)
-	if (gradeinput > 100.00 || gradeinput < 0.00)
-		{
-			alert("Number must be within 0 and 100!")
-			document.getElementById("txtinput").value = ""
-		}
-	else 
-		{
-			
-		}
-	for (let i = 0; i <= parseInt(times); i++)
-		{
-			grade = grade + parseFloat(document.getElementById("txtinput").value)
-
-		}
-	document.getElementById("lbloutput").textContent = "Grade average: " + grade
+	for (let i = 0; i < parseInt(times); i++)
+	{
+		gradeinput = parseFloat(document.getElementById("txtinput").value)
+		if (gradeinput > 100.00 || gradeinput < 0.00)
+			{
+				alert("Number must be within 0 and 100!")
+				document.getElementById("txtinput").value = ""
+			}
+		else 
+			{
+				grade = grade + parseFloat(document.getElementById("txtinput").value)
+			}
+	}
+	var gradeaverage = grade/times
+	var gradecollegescale = gradeaverage/25
+	gradeinput = 0;
+	document.getElementById("lbloutput").textContent = "Grade average: " + gradeaverage + "  College Scale: " + gradecollegescale
 }
