@@ -42,14 +42,15 @@ function Grades(times)
 			}
 		else 
 			{
-				
+				for (let i = 0; i < parseInt(times); i++)
+					{
 						sum = sum + gradeinput
 						gradeinput = 0;
 						var gradeaverage = sum/times
 						var gradecollegescale = gradeaverage/25
 						document.getElementById("txtinput").value = ""
 						document.getElementById("txtinput").focus
-		
+					}
 				count2 += 1
 				if (count2 == count)
 					{
